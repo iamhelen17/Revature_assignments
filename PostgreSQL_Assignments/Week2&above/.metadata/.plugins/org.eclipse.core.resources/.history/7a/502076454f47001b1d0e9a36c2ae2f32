@@ -1,0 +1,89 @@
+package com.app.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.app.dao.PlayerCrudDAO;
+import com.app.dao.dbutil.PostgresqlConnection;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+
+public class PlayerCrudDAOImpl implements PlayerCrudDAO {
+
+	@Override
+	public int createPlayer(Player player) throws BusinessException {
+		int c = 0;
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			Statement statement = connection.createStatement();
+			String sql = "insert into test2.player1 (player_id, name, age, gender, contact, dob, team_id) values (?,?,?,?,?,?,?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setInt(1, player.getPlayer_id());
+			preparedStatement.setString(2, player.getName());
+			preparedStatement.setInt(3, player.getAge());
+			preparedStatement.setString(4, player.getGender());
+			preparedStatement.setString(5, player.getContact());
+			preparedStatement.setDate(6, new java.sql.Date(player.getDob().getTime())); //converts util.Date to sql.Date
+			preparedStatement.setInt(7, player.getTeam_id());
+			
+			c = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e); //Take off this line when app is live
+			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
+		}
+		return c;
+	}
+
+	@Override
+	public void deletePlayer(int player_id) {
+		// TODO Auto-generated method stub
+		//Task
+		//how the query looks
+		//String sql = "delete from player1.player where id=?"
+		
+	}
+
+	@Override
+	public int updatePlayerContact(int player_id, String newContact) throws BusinessException {
+		// TODO Auto-generated method stub
+		//Task
+		//String sql = "update player1.player set contact=? where id=?"
+		
+		int u = 0;
+		
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			String sql = "update player1.player set contact=? where player_id=?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, newContact);
+			preparedStatement.setInt(2, player_id);
+			
+			
+			u = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e); //Take off this line when app is live
+			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
+		}
+		return u;
+		
+	
+	}
+
+	@Override
+	public Player getPlayerById(int player_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getAllPlayers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

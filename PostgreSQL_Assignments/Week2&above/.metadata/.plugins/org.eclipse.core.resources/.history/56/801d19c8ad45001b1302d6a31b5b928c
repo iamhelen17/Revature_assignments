@@ -1,0 +1,40 @@
+package com.app.dao.impl;
+
+import java.util.List;
+
+import com.app.dao.PlayerCrudDAO;
+import com.app.model.Player;
+
+public class PlayerCrudDAOImpl implements PlayerCrudDAO {
+
+	@Override
+	public int createPlayer(Player player) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deletePlayer(int player_id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int updatePlayerContact(int player_id, long newContact) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Player getPlayerById(int player_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getAllPlayers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

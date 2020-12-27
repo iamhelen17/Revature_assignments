@@ -1,0 +1,91 @@
+package com.app.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.app.dao.PlayerSearchDAO;
+import com.app.dao.dbutil.PostgresqlConnection;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+
+public class PlayerSearchDAOImpl implements PlayerSearchDAO {
+
+	@Override
+	public Player getPlayerById(int id) throws BusinessException {
+		Player player = null;
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			
+			String sql = "select name, age, gender, teamname, contact, dob from roc_revature.player where id = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setInt(1, id);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next()) {
+				player = new Player();
+				player.setId(id);  //local
+				player.setName(resultSet.getString("name"));
+				player.setAge(resultSet.getInt("age"));
+				player.setGender(resultSet.getString("gender"));
+				player.setContact(resultSet.getLong("contact"));
+				player.setTeamname(resultSet.getString("teamname"));
+				player.setDob(resultSet.getDate("dob"));
+			} else {
+				throw new BusinessException("No Player found with Id " +id);
+			}
+			
+		}  catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e); //Take off this line when app is live
+			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Player getPlayerByContact(long contact) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getAllPlayers() throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayersByAge(int age) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayersByGender(String gender) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayersByTeamName(String teamname) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayersByName(String name) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Player> getPlayersByDob(String dob) throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

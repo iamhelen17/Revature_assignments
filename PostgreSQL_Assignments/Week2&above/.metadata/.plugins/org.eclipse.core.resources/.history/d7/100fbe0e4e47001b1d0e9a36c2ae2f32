@@ -1,0 +1,38 @@
+package com.app.main;
+
+import java.util.Date;
+
+import com.app.dao.PlayerCrudDAO;
+import com.app.dao.impl.PlayerCrudDAOImpl;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+
+public class PlayerMain {
+
+	public static void main(String[] args) {
+		
+		PlayerCrudDAO dao = new PlayerCrudDAOImpl();
+		
+		Player p = new Player(8, "Justin", 18, "M", "6549870987", new Date(), 400);
+		
+		try {
+			if (dao.createPlayer(p) != 0) {
+				System.out.println("Player created successfully");
+			}
+		} catch (BusinessException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		Player u = new Player(3, "8764539087");
+		
+		try {
+			if (dao.updatePlayerContact(u) != 0) {
+				System.out.println("Player updated successfully");
+			}
+		} catch (BusinessException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+}

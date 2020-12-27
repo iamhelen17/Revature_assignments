@@ -1,0 +1,40 @@
+package com.app.service.util;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateValidator {
+	
+	private SimpleDateFormat dateformatter;
+	
+	public DateValidator() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DateValidator(SimpleDateFormat dateformatter) {
+		super();
+		this.dateformatter = dateformatter;
+	}
+	
+	public boolean isValidDate (String dateStr) {
+		
+		try {
+			Date theDate = dateformatter.parse(dateStr);
+		} catch (ParseException e) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.demo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//System.out.println("Hello World with Maven");
+		
+		
+		
+		try {
+			//Step 1 - Load Driver
+			Class.forName("org.postgresql.Driver");
+			System.out.println("Driver Loaded Successfully");
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);;
+		}
+	}
+
+}

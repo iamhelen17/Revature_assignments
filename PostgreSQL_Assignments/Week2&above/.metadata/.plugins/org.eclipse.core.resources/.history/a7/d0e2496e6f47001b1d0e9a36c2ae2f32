@@ -1,0 +1,27 @@
+package com.app.main;
+
+import com.app.dao.PlayerSearchDAO;
+import com.app.dao.impl.PlayerSearchDAOImpl;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+
+public class PlayerSearchMain {
+
+	public static void main(String[] args) {
+		PlayerSearchDAO dao = new PlayerSearchDAOImpl();
+		
+		try {
+			Player player = dao.getPlayerByContact("1273884048");
+			if (player != null) {
+				System.out.println("Details of player with Contact " +player.getContact());
+				System.out.println(player);
+			}
+			
+		} catch (BusinessException e) {
+			System.out.println(e.getMessage());;
+		}
+		
+
+	}
+
+}

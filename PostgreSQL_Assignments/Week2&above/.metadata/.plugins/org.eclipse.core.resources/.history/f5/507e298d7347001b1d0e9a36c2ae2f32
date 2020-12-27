@@ -1,0 +1,89 @@
+package com.app.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.app.dao.PlayerSearchDAO;
+import com.app.dao.dbutil.PostgresqlConnection;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+
+public class PlayerSearchDAOImpl implements PlayerSearchDAO {
+
+	@Override
+	public Player getPlayerByContact(String contact) throws BusinessException {
+		Player player = null;
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			
+			String sql = "select player_id, name, age, gender, dob,team_id from test2.player1 where contact = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, contact);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next()) {
+				player = new Player();
+				player.setPlayer_id(resultSet.getInt("player_id"));  
+				player.setName(resultSet.getString("name"));
+				player.setAge(resultSet.getInt("age"));
+				player.setGender(resultSet.getString("gender"));
+				player.setContact(contact); //local
+				player.setDob(resultSet.getDate("dob"));
+				player.setTeam_id(resultSet.getInt("team_id"));
+				
+				
+			} else {
+				throw new BusinessException("No Player found with Contact " +contact);
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e); //Take off this line when app is live
+			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
+		}
+		
+		return player;
+	} 
+
+	@Override
+	public List<Player> getPlayersByGender(String gender) throws BusinessException {
+		List<Player> playersList = new ArrayList<>();
+		
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			
+			String sql = "select player_id, name, age, contact, dob, team_id from test2.player1 where gender = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, gender);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				Player player = new Player();
+				player.setPlayer_id(resultSet.getInt("player_id"));  
+				player.setName(resultSet.getString("name"));
+				player.setAge(resultSet.getInt("age"));
+				player.setGender(gender); //local
+				player.setContact(resultSet.getString("contact"));
+				player.setDob(resultSet.getDate("dob"));
+				player.setTeam_id(resultSet.getInt("team_id"));
+				playersList.add(player);
+			}
+			if (playersList.size() == 0) {
+				throw new BusinessException("No Players in the DB so far");
+			}
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e); //Take off this line when app is live
+			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
+		}
+		
+		return playersList;
+	}
+
+}

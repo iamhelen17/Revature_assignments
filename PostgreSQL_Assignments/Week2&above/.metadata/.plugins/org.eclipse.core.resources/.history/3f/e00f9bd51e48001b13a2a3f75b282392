@@ -1,0 +1,25 @@
+package com.app.service.util;
+
+import java.time.format.DateTimeFormatter;
+
+public class DateValidator {
+	
+	private DateTimeFormatter dateformatter;
+	
+	public DateValidator() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DateValidator(DateTimeFormatter dateformatter) {
+		super();
+		this.dateformatter = dateformatter;
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

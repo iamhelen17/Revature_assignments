@@ -1,0 +1,9 @@
+package com.app.main;
+
+public class PlayerMain {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
