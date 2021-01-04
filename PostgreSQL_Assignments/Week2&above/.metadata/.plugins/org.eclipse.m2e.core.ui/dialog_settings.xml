@@ -48,10 +48,16 @@
 			<item value="com.demo"/>
 		</list>
 		<list key="name">
+			<item value="log4j_demo"/>
+			<item value="junit5_maven_demo"/>
+			<item value="player_search_app"/>
 			<item value="jdbc_demo-2"/>
 			<item value="jdbc_demo-1"/>
 		</list>
 		<list key="artifactId">
+			<item value="log4j_demo"/>
+			<item value="junit5_maven_demo"/>
+			<item value="player_search_app"/>
 			<item value="jdbc_demo-2"/>
 			<item value="jdbc_demo-1"/>
 		</list>

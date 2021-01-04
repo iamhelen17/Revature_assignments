@@ -1,0 +1,5 @@
+package com.app.service2;
+
+public interface AppService {
+
+}

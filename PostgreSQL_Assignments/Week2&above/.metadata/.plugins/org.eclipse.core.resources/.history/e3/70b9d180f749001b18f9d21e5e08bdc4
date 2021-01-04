@@ -1,0 +1,19 @@
+package com.app.service2.impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AppServiceImplTest {
+
+	@Test
+	void testIsValidPrimeNumber() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testIsValidMobileNumber() {
+		fail("Not yet implemented");
+	}
+
+}

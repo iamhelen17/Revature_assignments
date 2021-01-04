@@ -1,0 +1,8 @@
+package com.demo.service;
+
+public class MyServices {
+
+	public String sayHello(String name) {
+		return "Hello " +name;
+	}
+}

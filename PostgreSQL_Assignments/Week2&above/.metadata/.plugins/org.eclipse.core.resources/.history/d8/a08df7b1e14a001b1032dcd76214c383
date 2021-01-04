@@ -1,0 +1,15 @@
+package com.app.service;
+
+import org.apache.log4j.Logger;
+
+import com.app.main.HelloLog4j;
+
+public class HelloLogServive {
+
+	private static Logger log = Logger.getLogger(HelloLogServive.class);
+	
+	public void helloLog( ) {
+		log.info("hello from log service helloLog()");
+		log.info("bye bye from log service helloLog()");
+	}
+}

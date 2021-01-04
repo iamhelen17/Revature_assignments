@@ -1,6 +1,7 @@
 package com.app.dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +15,6 @@ import com.app.dao.dbutil.PostgresqlConnection;
 import com.app.exception.BusinessException;
 import com.app.model.Player;
 import com.app.service.dateutil.DateConverter;
-import com.sun.tools.javac.parser.ReferenceParser.ParseException;
 
 public class PlayerSearchDAOImpl implements PlayerSearchDAO {
 

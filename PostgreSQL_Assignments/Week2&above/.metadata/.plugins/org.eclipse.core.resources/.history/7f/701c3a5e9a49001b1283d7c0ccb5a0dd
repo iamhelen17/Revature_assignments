@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+
+public class HelloJunit {
+
+	@BeforeAll
+	public static void helloBeforeAll() {
+		System.out.println("Hello from helloBeforeAll()");
+	}
+	
+	@AfterAll
+	public static void helloAfterAll() {
+		System.out.println("Hello from helloBeforeAll()");
+	}
+}

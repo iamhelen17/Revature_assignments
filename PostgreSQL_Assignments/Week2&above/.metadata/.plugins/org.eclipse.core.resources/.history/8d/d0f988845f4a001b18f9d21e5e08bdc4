@@ -1,0 +1,22 @@
+package com.app.service.impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.app.service.impl.PlayerSearchServiceImpl;
+
+class PlayerSearchServiceImplTest {
+
+	private static PlayerSearchServiceImpl services;
+	@Test
+	void testGetPlayerById() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetPlayerByContact() {
+		fail("Not yet implemented");
+	}
+
+}

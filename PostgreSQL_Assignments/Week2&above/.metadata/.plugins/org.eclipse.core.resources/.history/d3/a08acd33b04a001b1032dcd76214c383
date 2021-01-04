@@ -1,0 +1,47 @@
+package com.app.service.impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import com.app.dao.PlayerSearchDAO;
+import com.app.dao.impl.PlayerSearchDAOImpl;
+import com.app.exception.BusinessException;
+import com.app.model.Player;
+import com.app.service.impl.PlayerSearchServiceImpl;
+
+class PlayerSearchServiceImplTest {
+	
+	private static PlayerSearchServiceImpl services;
+	
+	@BeforeAll
+	public static void setupPlayerSearchServiceImpl() {
+		services = new PlayerSearchServiceImpl();        //instance of that class has been created
+	}
+	
+	
+	@Test
+	public void testGetPlayerById() {
+		Player player = new Player(100, "Sachin", 33, "M", 1234567890, null, "Rockers");    //expected output
+		PlayerSearchDAO playerSearchDAO = new PlayerSearchDAOImpl();
+		try {
+			assertEquals(player, playerSearchDAO.getPlayerById(100));
+		} catch (BusinessException e) {
+			System.out.println(e);
+		}
+	}
+	
+
+
+	@Test
+	public void testGetPlayerByContact() {
+		Player player = new Player(103, "Reena", 23, "F", 3234567899L, null, "Bulls");
+		try {
+			assertEquals(player, services.getPlayerByContact(3234567899L));
+		} catch (BusinessException e) {
+			System.out.println(e);;
+		}
+	}
+
+}
