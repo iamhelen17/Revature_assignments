@@ -31,7 +31,7 @@ public class PlayerMain {
 			System.out.println("Player deleted successfully");
 		} catch (BusinessException e) {
 			System.out.println(e.getMessage());;
-		}
+		}*/
 			
 	
 		
@@ -43,9 +43,9 @@ public class PlayerMain {
 				}
 		} catch (BusinessException e) {
 			System.out.println(e.getMessage());
-		} */
+		} 
 		
-		try {
+		/*try {
 			Player player = dao.getPlayerById(3);
 			if (player != null) {
 				System.out.println("Details of player with Player_id " +player.getPlayer_id());
@@ -53,7 +53,7 @@ public class PlayerMain {
 			}
 		} catch (BusinessException e) {
 			System.out.println(e.getMessage());;
-		}
+		}*/
 		
 		try {
 			List<Player> playersList = dao.getAllPlayers();

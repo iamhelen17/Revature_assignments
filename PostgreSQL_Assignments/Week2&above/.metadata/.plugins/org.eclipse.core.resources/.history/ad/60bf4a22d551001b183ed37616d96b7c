@@ -1,0 +1,32 @@
+package com.assignment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.app.Product;
+
+public class FlightMain {
+
+	public static void main(String[] args) {
+		List<Flight> flightList = new ArrayList<>();
+		flightList.add(new Flight(200, "Delta", "Boeing", 234.69, 3.9f, false));
+		flightList.add(new Flight(10, "Delta", "Airbus", 434.0, 4.3f, true));
+		flightList.add(new Flight(110, "Delta", "Boeing", 93.29, 1.3f, false));
+		flightList.add(new Flight(239, "Delta", "Boeing", 234.69, 1.3f, false));
+		flightList.add(new Flight(500, "Delta", "Airbus", 434.0, 4.3f, true));
+		flightList.add(new Flight(400, "Delta", "Airbus", 434.0, 3.9f, true));
+		flightList.add(new Flight(130, "Delta", "Boeing", 234.69, 4.3f, true));
+		flightList.add(new Flight(600, "Delta", "Airbus", 434.0, 4.3f, false));
+		
+		System.out.println("\n\nPrinting all the products sorted by cost(low to high)");
+		printFlights(flightList);
+		
+	}
+	
+	public static void printFlights(List<Flight> flightList) {
+		for (Flight f : flightList) {
+			System.out.println(f);
+		}
+	}
+
+}

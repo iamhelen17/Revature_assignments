@@ -1,0 +1,12 @@
+package extending_thread_class;
+
+public class ThreadDemo1 {
+
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread());
+		Thread t=Thread.currentThread();
+		t.setName("myMain");
+		System.out.println(Thread.currentThread());
+	}
+
+}

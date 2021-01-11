@@ -95,8 +95,15 @@ public class PlayerSearchServiceImpl implements PlayerSearchService {
 
 	@Override
 	public List<Player> getAllPlayers() throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Player> allPlayersList;
+		
+		allPlayersList = playerSearchDAO.getAllPlayers();
+		
+		if (allPlayersList != null && allPlayersList.size() > 0) {
+		return allPlayersList;
+		} else {
+			throw new BusinessException("Players cannot be null");
+		}
 	}
 
 	@Override

@@ -1,0 +1,7 @@
+package com.assignment;
+
+import java.util.Comparator;
+
+public class FlightAvailabilityComparator implements Comparator<Flight>{
+
+}

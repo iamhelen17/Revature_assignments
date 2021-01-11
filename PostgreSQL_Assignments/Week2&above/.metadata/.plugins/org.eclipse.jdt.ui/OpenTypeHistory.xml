@@ -4,4 +4,8 @@
     <typeInfo handle="=player_search_app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.dao{PlayerSearchDAO.java[PlayerSearchDAO" modifiers="513" timestamp="1609035172632"/>
     <typeInfo handle="=junit5_maven_demo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service{MyServices.java[MyServices" modifiers="1" timestamp="1609225757246"/>
     <typeInfo handle="=player_search_app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service.impl{PlayerSearchServiceImpl.java[PlayerSearchServiceImpl" modifiers="1" timestamp="1609096582069"/>
+    <typeInfo handle="=mockito_junit5_maven_demo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service.impl{MathApplication.java[MathApplication" modifiers="1" timestamp="1610047749268"/>
+    <typeInfo handle="=interfaces_java8_demo/src&lt;com.demo{HelloJava8Interface.java[HelloJava8Interface" modifiers="513" timestamp="1610054111210"/>
+    <typeInfo handle="=interfaces_java8_demo/src&lt;lambda_demo{HelloFunctional.java[HelloFunctional" modifiers="513" timestamp="1610054489997"/>
+    <typeInfo handle="=collections_sorting_demo/C:\/Program Files\/Java\/jdk1.8.0_271\/jre\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.util(Comparator.class[Comparator" modifiers="1537" timestamp="1609231063104"/>
 </typeInfoHistroy>

@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\model\Desktop\GIT\Week2&amp;above\junit5_maven_demo\pom.xml"/>
+			<item value="C:\Users\model\Desktop\GIT\Week2&amp;above\junit5_maven_demo"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,6 +50,7 @@
 			<item value="com.demo"/>
 		</list>
 		<list key="name">
+			<item value="mockito_junit5_maven_demo"/>
 			<item value="log4j_demo"/>
 			<item value="junit5_maven_demo"/>
 			<item value="player_search_app"/>
@@ -55,6 +58,7 @@
 			<item value="jdbc_demo-1"/>
 		</list>
 		<list key="artifactId">
+			<item value="mockito_junit5_maven_demo"/>
 			<item value="log4j_demo"/>
 			<item value="junit5_maven_demo"/>
 			<item value="player_search_app"/>

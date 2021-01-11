@@ -1,0 +1,14 @@
+package com.app.service.impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AppServiceImplTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

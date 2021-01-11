@@ -75,11 +75,12 @@ public class PlayerCrudDAOImpl implements PlayerCrudDAO {
 		int u = 0;
 		
 		try (Connection connection = PostgresqlConnection.getConnection()) {
-			String sql = "update test2.player1 set contact=? where player_id=?";
+			//String sql = "update test2.player1 set contact=? where player_id=?";
+			String sql = "update test2.player1 set contact=?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			
 			preparedStatement.setString(1, newContact);
-			preparedStatement.setInt(2, player_id);
+			//preparedStatement.setInt(2, player_id);
 			
 			
 			u = preparedStatement.executeUpdate();
@@ -88,7 +89,9 @@ public class PlayerCrudDAOImpl implements PlayerCrudDAO {
 			System.out.println(e); //Take off this line when app is live
 			throw new BusinessException("Internal error occurred. Contact SYSADMIN");
 		}
+		System.out.println(u);
 		return u;
+		
 		
 	
 	}

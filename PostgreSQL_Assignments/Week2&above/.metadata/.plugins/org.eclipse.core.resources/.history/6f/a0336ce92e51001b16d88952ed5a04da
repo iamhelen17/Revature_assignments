@@ -1,0 +1,11 @@
+package lambda_demo;
+
+public class OldStyleWithoutLambda implements HelloFunctional {
+
+	@Override
+	public void hello() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
