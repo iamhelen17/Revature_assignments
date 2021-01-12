@@ -83,9 +83,9 @@ public class PlayerSearchMain {
 				
 				
 			case 3:
+				System.out.println("Enter Player Age to get all the players matching with that age");
 				try {
-					System.out.println("Enter Player Age to get all the players matching with that age");
-					int age =Integer.parseInt(sc.next());
+					int age =Integer.parseInt(sc.nextLine());
 					List<Player> agePlayersList = playerSearchService.getPlayersByAge(age);
 					if (agePlayersList != null && agePlayersList.size() > 0) {
 						System.out.println("There are " +agePlayersList.size()+ " no. of player/s... with age = " +age+ ". Printing their details...");
@@ -201,3 +201,5 @@ public class PlayerSearchMain {
 	}
 
 }
+//Task - Complete the other menu options of this app.....
+
